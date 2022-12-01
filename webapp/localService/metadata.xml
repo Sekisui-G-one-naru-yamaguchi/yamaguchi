@@ -1,0 +1,69 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+  <edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1" />
+  </edmx:Reference>
+  <edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cloud.sdk.capng">
+      <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="YCAZS001" EntityType="cloud.sdk.capng.YCAZS001" />
+        <EntitySet Name="YCAZH001_VH" EntityType="cloud.sdk.capng.YCAZH001_VH" />
+      </EntityContainer>
+      <EntityType Name="YCAZS001">
+        <Key>
+          <PropertyRef Name="VBELN" />
+          <PropertyRef Name="POSNR" />
+        </Key>
+        <Property Name="VBELN" Type="Edm.String" MaxLength="10" Nullable="false" />
+        <Property Name="POSNR" Type="Edm.String" MaxLength="6" Nullable="false" />
+        <Property Name="KUNNR" Type="Edm.String" MaxLength="10" />
+        <Property Name="NAME1" Type="Edm.String" MaxLength="40" />
+        <Property Name="BSTNK" Type="Edm.String" MaxLength="20" />
+        <Property Name="VKBUR" Type="Edm.String" MaxLength="4" />
+        <Property Name="VKGRP" Type="Edm.String" MaxLength="3" />
+        <Property Name="AUDAT" Type="Edm.DateTime" sap:display-format="Date" />
+        <Property Name="ERNAM" Type="Edm.String" MaxLength="12" />
+        <Property Name="VKORG" Type="Edm.String" MaxLength="4" />
+        <Property Name="VTWEG" Type="Edm.String" MaxLength="2" />
+        <Property Name="SPART" Type="Edm.String" MaxLength="2" />
+        <Property Name="MATNR" Type="Edm.String" MaxLength="40" />
+        <Property Name="ARKTX" Type="Edm.String" MaxLength="40" />
+        <Property Name="KWMENG" Type="Edm.Decimal" Scale="3" Precision="15" />
+        <Property Name="VRKME" Type="Edm.String" MaxLength="3" />
+        <Property Name="EDATU" Type="Edm.DateTime" sap:display-format="Date" />
+        <Property Name="AUART" Type="Edm.String" MaxLength="4" />
+        <Property Name="AUARTTEXT" Type="Edm.String" MaxLength="20" />
+        <Property Name="ABGRU" Type="Edm.String" MaxLength="2" />
+        <Property Name="NETWR" Type="Edm.Decimal" Scale="3" Precision="16" />
+        <Property Name="WAERK" Type="Edm.String" MaxLength="5" />
+        <Property Name="GBSTA" Type="Edm.String" MaxLength="1" />
+        <Property Name="GBSTATEXT" Type="Edm.String" MaxLength="60" />
+      </EntityType>
+      <EntityType Name="YCAZH001_VH">
+        <Key>
+          <PropertyRef Name="MATNR" />
+        </Key>
+        <Property Name="MATNR" Type="Edm.String" MaxLength="40" Nullable="false" />
+        <Property Name="MAKTX" Type="Edm.String" MaxLength="40" />
+      </EntityType>
+      <Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cloud.sdk.capng.YCAZS001/MATNR">
+        <Annotation Term="Common.ValueList">
+          <Record Type="Common.ValueListType">
+            <PropertyValue Property="SearchSupported" Bool="false" />
+            <PropertyValue Property="CollectionPath" String="YCAZH001_VH" />
+            <PropertyValue Property="Parameters">
+              <Collection>
+                <Record Type="Common.ValueListParameterInOut">
+                  <PropertyValue Property="LocalDataProperty" PropertyPath="MATNR" />
+                  <PropertyValue Property="ValueListProperty" String="MATNR" />
+                </Record>
+                <Record Type="Common.ValueListParameterDisplayOnly">
+                  <PropertyValue Property="ValueListProperty" String="MAKTX" />
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

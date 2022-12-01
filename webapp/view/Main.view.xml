@@ -1,0 +1,98 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    xmlns:m="sap.m.Toolbar" 
+    xmlns:t="sap.ui.table" 
+    xmlns:f="sap.f" 
+	xmlns:semantic="sap.f.semantic"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" 
+    xmlns:smartTable="sap.ui.comp.smarttable" 
+    xmlns:smartVariant="sap.ui.comp.smartvariants"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    controllerName="jp.co.sekisui.yfizp003.controller.Main"
+	displayBlock="true">
+
+	<Shell id="shell" appWidthLimited="false">
+	<App id="app">
+		<pages>
+			<semantic:SemanticPage id="idSemanticPage">
+                <!-- ヘッダエリアStart -->
+				<semantic:titleHeading>
+					<smartVariant:SmartVariantManagement id="smartVariant" 
+                    entitySet="YCAZS001" 
+                    persistencyKey="smartFilterBarPKey"/>
+				</semantic:titleHeading>
+				<semantic:headerContent>
+					<VBox width="100%" direction="Column" id="vbox0">
+						<items>
+							<smartFilterBar:SmartFilterBar 
+                             class="sapContrastPlus" 
+                             persistencyKey="smartFilterBarPKey" 
+                             hSpacing="0" 
+                             id="smartFilterBar"
+							 entitySet="YCAZS001" 
+                             smartVariant="smartVariant">
+							<smartFilterBar:controlConfiguration/>
+						
+                            </smartFilterBar:SmartFilterBar>
+						</items>
+					</VBox>
+				</semantic:headerContent>
+                <!-- ヘッダエリアEnd -->
+
+                <!-- 明細エリアStart -->
+				<semantic:content>
+					<smartTable:SmartTable 
+                    direction="Column" 
+                    header="{i18n>title}" 
+                    enableAutoBinding="false" 
+                    useExportToExcel="true" 
+                    id="smartTable"
+					entitySet="YCAZS001" 
+                    persistencyKey="smartTableKey" 
+                    smartFilterId="smartFilterBar" 
+                    beforeRebindTable="onBeforeRebind" 
+                    dataReceived="onDataReceived"
+
+                    ignoredFields="VBELN,VKBUR,VKORG,VTWEG,SPART,VKBUR,VKGRP,ERNAM"
+					initiallyVisibleFields="VBELN,POSNR,AUART,AUARTTEXT,KUNNR,NAME1,BSTNK,AUDAT,MATNR,ARKTX,ABGRU,EDATU,KWMENG,VRKME,NETWR,WAERK,GBSTA,GBSTATEXT"                    
+
+                    showRowCount="true" 
+					renderType="Bare">
+						<smartTable:customToolbar>
+							<Toolbar id="Tbid" design="Solid">
+								<content>
+									<ToolbarSpacer id="TBS"/>
+								</content>
+							</Toolbar>
+						</smartTable:customToolbar>
+                        
+						<t:Table id="Tid" selectionMode="None" visibleRowCountMode="Auto" threshold="100">	
+	
+                            <t:Column id="Cid" customData:p13nData="{columnKey:'VBELN', leadingProperty:'VBELN', columnIndex:'0'}" 
+                                sortProperty="VBELN" 
+                                autoResizable="true"
+                                resizable="true"
+                                width="130px"
+                                filterProperty="VBELN">
+									<Label id="Lid" text="{i18n>smarttable.label.VBELN}"/>
+									<t:template>
+                                        <Text id="idTxtVBELN" text="{VBELN}" />
+									</t:template>
+							</t:Column>
+                            
+						</t:Table>
+					</smartTable:SmartTable>
+				</semantic:content>
+                <!-- 明細エリアEnd -->
+
+                <!--メッセージインジケータ-->
+                <semantic:messagesIndicator>
+                    <semantic:MessagesIndicator id="MessagePopManagerBtn"/>
+                </semantic:messagesIndicator>
+                <!--メインアクション用ボタン-->
+
+			</semantic:SemanticPage>
+		</pages>
+	</App>
+	</Shell>
+</mvc:View>

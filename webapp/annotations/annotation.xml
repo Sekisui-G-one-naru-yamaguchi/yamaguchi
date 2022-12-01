@@ -1,0 +1,235 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/odata/v2/cloud.sdk.capng/$metadata">
+        <edmx:Include Alias="Metadata" Namespace="cloud.sdk.capng"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+    
+			<Annotations Target="Metadata.YCAZS001">
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>VKORG</PropertyPath>
+						<PropertyPath>VTWEG</PropertyPath>
+						<PropertyPath>SPART</PropertyPath>
+                        <PropertyPath>VKBUR</PropertyPath>
+						<PropertyPath>VKGRP</PropertyPath>
+						<PropertyPath>ERNAM</PropertyPath>
+                        <PropertyPath>VBELN</PropertyPath>
+						<PropertyPath>BSTNK</PropertyPath>
+						<PropertyPath>KUNNR</PropertyPath>
+                        <PropertyPath>AUDAT</PropertyPath>
+						<PropertyPath>MATNR</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						
+                        <Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="VBELN"/>
+						</Record>
+
+                        <Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="POSNR"/>
+						</Record>
+						
+                        <Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="AUART"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="AUARTTEXT"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="KUNNR"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="NAME1"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BSTNK"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="AUDAT"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="MATNR"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ARKTX"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ABGRU"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="EDATU"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="KWMENG"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="VRKME"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="NETWR"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="WAERK"/>
+						</Record>
+                        
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GBSTA"/>
+						</Record>
+
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GBSTATEXT"/>
+						</Record>
+                        
+					</Collection>
+				</Annotation>
+			</Annotations>            
+
+            <!--  ラベル　-->
+			<Annotations Target="Metadata.YCAZS001/VBELN">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VBELN}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/VTWEG">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VTWEG}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/VKORG">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VKORG}" />
+			</Annotations>
+            
+            <Annotations Target="Metadata.YCAZS001/SPART">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.SPART}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/VKBUR">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VKBUR}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/ERNAM">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.ERNAM}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/MATNR">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.MATNR}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/KUNNR">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.KUNNR}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/VKGRP">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VKGRP}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/BSTNK">
+				<Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.BSTNK}" />
+			</Annotations>
+
+			<Annotations Target="Metadata.YCAZS001/ABGRU">
+				<Annotation Term="UI.HiddenFilter" Bool="true" />
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.ABGRU}" />
+			</Annotations>
+
+       
+			<Annotations Target="Metadata.YCAZS001/KWMENG">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.KWMENG}" />
+			</Annotations>
+		
+            
+            <Annotations Target="Metadata.YCAZS001/NAME1">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.NAME1}" />
+			</Annotations>
+			
+        
+            <Annotations Target="Metadata.YCAZS001/NETWR">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.NETWR}" />
+			</Annotations>
+            
+
+			<Annotations Target="Metadata.YCAZS001/GBSTA">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.GBSTA}" />
+			</Annotations>
+			<Annotations Target="Metadata.YCAZS001/GBSTATEXT">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.GBSTATEXT}" />
+			</Annotations>
+			<Annotations Target="Metadata.YCAZS001/WAERK">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.WAERK}" />
+			</Annotations>
+			<Annotations Target="Metadata.YCAZS001/AUART">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.AUART}" />
+			</Annotations>
+			<Annotations Target="Metadata.YCAZS001/AUARTTEXT">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.AUARTTEXT}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/EDATU">
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.EDATU}" />
+			</Annotations>
+			
+            <Annotations Target="Metadata.YCAZS001/AUDAT">
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.AUDAT}" />
+			</Annotations>
+            
+            <Annotations Target="Metadata.YCAZS001/VRKME">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.VRKME}" />
+			</Annotations>
+            
+			<Annotations Target="Metadata.YCAZS001/ARKTX">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.ARKTX}" />
+			</Annotations>
+            
+			<Annotations Target="Metadata.YCAZS001/POSNR">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.POSNR}" />
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/CHECKBOX">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZS001/MESSAGE">
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+			</Annotations>
+
+            <Annotations Target="Metadata.YCAZH001_VH/MATNR">
+	            <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.MATNR}" />
+            </Annotations>
+
+            <Annotations Target="Metadata.YCAZH001_VH/MAKTX">
+	            <Annotation Term="Common.Label" String="{@i18n&gt;smarttable.label.ARKTX}" />
+            </Annotations>
+
+		</Schema>
+	
+    </edmx:DataServices>
+</edmx:Edmx>
